@@ -3,33 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajeshwar Sahu | Portfolio</title>
+<title>Rajeshwar Sahu | Research Portfolio</title>
 
 <style>
 :root {
   --bg: #ffffff;
   --text: #0f172a;
-  --card: #f1f5f9;
-  --accent: #2563eb;
+  --card: #f8fafc;
+  --accent: #1d4ed8;
 }
 
 .dark {
-  --bg: #0f172a;
+  --bg: #020617;
   --text: #e2e8f0;
-  --card: #1e293b;
+  --card: #0f172a;
   --accent: #38bdf8;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   transition: 0.4s;
+  line-height: 1.6;
 }
 
 .container {
-  max-width: 950px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
@@ -37,53 +38,42 @@ body {
 /* HEADER */
 header {
   text-align: center;
-  padding: 50px 0;
-}
-
-.profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: inline-block;
-  margin-bottom: 15px;
+  padding: 60px 0;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin: 10px 0;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
 }
 
-.tag {
+.subtitle {
   color: var(--accent);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-/* BUTTONS */
-.buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 18px;
-  border-radius: 25px;
-  background: var(--accent);
-  color: white;
+/* NAV BAR */
+.nav {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.nav a {
+  margin: 0 10px;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-.buttons a:hover {
-  transform: scale(1.1);
+  color: var(--text);
+  font-weight: bold;
 }
 
 /* CARDS */
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  transition: 0.3s;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--accent);
   opacity: 0;
   transform: translateY(20px);
+  transition: 0.4s;
 }
 
 .card.show {
@@ -91,27 +81,35 @@ h1 {
   transform: translateY(0);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
 h2 {
   color: var(--accent);
 }
 
-/* SKILLS GRID */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
+/* RESEARCH STYLE */
+.paper {
+  margin-bottom: 15px;
 }
 
-.skill {
+.paper-title {
+  font-weight: bold;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
   background: var(--accent);
   color: white;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
   text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
 </style>
 </head>
@@ -121,66 +119,87 @@ h2 {
 <div class="container">
 
 <header>
-  <div class="profile"></div>
   <h1>Rajeshwar Sahu</h1>
-  <p class="tag">Biology Student | Future Researcher 🧬</p>
-
-  <div class="buttons">
-    <a href="#">GitHub</a>
-    <a href="#">LinkedIn</a>
-  </div>
+  <p class="subtitle">Integrated M.Sc. Biology | Research-Oriented Student</p>
 </header>
 
-<div class="card">
-  <h2>About Me</h2>
+<div class="nav">
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="card" id="about">
+  <h2>About</h2>
   <p>
-    Integrated M.Sc. Biology student at UM-DAE CEBS with expertise in molecular biology,
-    microbiology, and computational data analysis. Passionate about genetics and biomedical research.
+    I am an Integrated M.Sc. Biology student at UM-DAE CEBS, University of Mumbai,
+    with training in molecular biology, microbiology, and computational data analysis.
+    My research interests lie in genetics, disease mechanisms, and translational biomedical research.
   </p>
 </div>
 
-<div class="card">
-  <h2>Education</h2>
-  <p><b>Integrated M.Sc. Biology (2023–2028)</b></p>
-  <p>UM-DAE CEBS, University of Mumbai</p>
-  <p>CGPA: 7.18</p>
-</div>
-
-<div class="card">
+<div class="card" id="research">
   <h2>Research Experience</h2>
-  <ul>
-    <li>Daphnis nerii flight mechanics analysis using DeepLabCut</li>
-    <li>Drosophila egg development temperature study</li>
-  </ul>
+
+  <div class="paper">
+    <div class="paper-title">Flight Mechanics and Thermoregulation in Daphnis nerii (2025)</div>
+    <p>
+      Quantitative analysis of wingbeat dynamics and thoracic temperature correlation using
+      high-speed videography and Python-based computational tools (DeepLabCut, DLTdv).
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Temperature Effects on Drosophila Development (2023)</div>
+    <p>
+      Designed controlled experiments to analyze developmental variation under temperature changes,
+      followed by statistical analysis of phenotypic outcomes.
+    </p>
+  </div>
+
 </div>
 
-<div class="card">
-  <h2>Skills</h2>
+<div class="card" id="skills">
+  <h2>Technical Skills</h2>
+
+  <p><b>Molecular Biology:</b></p>
   <div class="skills">
-    <div class="skill">PCR</div>
-    <div class="skill">DNA Extraction</div>
-    <div class="skill">Python</div>
-    <div class="skill">NumPy</div>
-    <div class="skill">Pandas</div>
-    <div class="skill">Matplotlib</div>
+    <span>PCR</span>
+    <span>DNA Extraction</span>
+    <span>Gel Electrophoresis</span>
   </div>
+
+  <p><b>Computational:</b></p>
+  <div class="skills">
+    <span>Python</span>
+    <span>NumPy</span>
+    <span>Pandas</span>
+    <span>Matplotlib</span>
+    <span>OpenCV</span>
+  </div>
+
 </div>
 
 <div class="card">
   <h2>Achievements</h2>
-  <p>NIUS Batch 19 (2024)</p>
+  <p>Selected for NIUS (Batch 19, 2024)</p>
 </div>
 
-<div class="card">
+<div class="card" id="contact">
   <h2>Contact</h2>
-  <p>📧 rajeshwar.sahu@cbs.ac.in</p>
-  <p>📱 +91 9692822235</p>
+  <p>Email: rajeshwar.sahu@cbs.ac.in</p>
+  <p>Phone: +91 9692822235</p>
 </div>
+
+<footer>
+  © 2026 Rajeshwar Sahu
+</footer>
 
 </div>
 
 <script>
-// Auto day/night mode
+// Auto theme
 const hour = new Date().getHours();
 if (hour < 7 || hour >= 19) {
   document.body.classList.add("dark");
@@ -190,8 +209,7 @@ if (hour < 7 || hour >= 19) {
 const cards = document.querySelectorAll(".card");
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
+    if (card.getBoundingClientRect().top < window.innerHeight - 50) {
       card.classList.add("show");
     }
   });
