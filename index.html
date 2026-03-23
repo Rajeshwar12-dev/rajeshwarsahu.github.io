@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajeshwar Sahu | Portfolio</title>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card: #f1f5f9;
+  --accent: #2563eb;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --card: #1e293b;
+  --accent: #38bdf8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.tag {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* BUTTONS */
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  transform: scale(1.1);
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: var(--accent);
+}
+
+/* SKILLS GRID */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.skill {
+  background: var(--accent);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="profile"></div>
+  <h1>Rajeshwar Sahu</h1>
+  <p class="tag">Biology Student | Future Researcher 🧬</p>
+
+  <div class="buttons">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</header>
+
+<div class="card">
+  <h2>About Me</h2>
+  <p>
+    Integrated M.Sc. Biology student at UM-DAE CEBS with expertise in molecular biology,
+    microbiology, and computational data analysis. Passionate about genetics and biomedical research.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Education</h2>
+  <p><b>Integrated M.Sc. Biology (2023–2028)</b></p>
+  <p>UM-DAE CEBS, University of Mumbai</p>
+  <p>CGPA: 7.18</p>
+</div>
+
+<div class="card">
+  <h2>Research Experience</h2>
+  <ul>
+    <li>Daphnis nerii flight mechanics analysis using DeepLabCut</li>
+    <li>Drosophila egg development temperature study</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">PCR</div>
+    <div class="skill">DNA Extraction</div>
+    <div class="skill">Python</div>
+    <div class="skill">NumPy</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">Matplotlib</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Achievements</h2>
+  <p>NIUS Batch 19 (2024)</p>
+</div>
+
+<div class="card">
+  <h2>Contact</h2>
+  <p>📧 rajeshwar.sahu@cbs.ac.in</p>
+  <p>📱 +91 9692822235</p>
+</div>
+
+</div>
+
+<script>
+// Auto day/night mode
+const hour = new Date().getHours();
+if (hour < 7 || hour >= 19) {
+  document.body.classList.add("dark");
+}
+
+// Scroll animation
+const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      card.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
